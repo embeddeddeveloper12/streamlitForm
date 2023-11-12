@@ -16,5 +16,5 @@ if submit==True:
     if len(fullNum)==0 or len(fatherName)==0 or len(motherName)==0 or len(email)==0:
         st.error("Fill all feilds above")
         mail=email
-    if len(mail)>0 and mail.find("@")<0:
+    if mail.find("@")<0:
             st.error("Enter a valid email")
