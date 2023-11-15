@@ -10,11 +10,13 @@ motherName = st.text_input("Mother name : ")
 age=st.slider("Age(in years) : ",1,100)
 gender=st.radio("Gender :",["Male","Female"])
 nationality=st.selectbox("Nationality :",["Indian","other"])
+adress=st.text_area(" Full Address : ")
 email=st.text_input("E-mail : ")
+mno=st.text_input("Mobile No : ")
 submit=st.button("submit")
 if submit==True:
     if len(fullNum)==0 or len(fatherName)==0 or len(motherName)==0 or len(email)==0:
         st.error("Fill all feilds above")
-    mail=email
-    if mail.find("@")<0:
-            st.error("Enter a valid email")
+        mail=email
+        if len(mail)>0 and mail.find("@")<0:
+                st.error("Enter a valid email")
