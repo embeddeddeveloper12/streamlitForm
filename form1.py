@@ -1,8 +1,5 @@
-import streamlit as st 
-import requests as r
-nme=[]
-regNo=[]
-Age=[]
+import streamlit as st
+import requests as req
 st.header("Registration form")
 fullNum=st.text_input("Full Name : ")
 fatherName = st.text_input("Father name : ")
@@ -20,3 +17,7 @@ if submit==True:
         mail=email
         if len(mail)>0 and mail.find("@")<0:
                 st.error("Enter a valid email")
+    else:
+         req.get(f'''https://script.google.com/macros/sAKfycbw2BkmNPOkXFMNxb5EJ53ZGAdIx_2BV4Hh2PsHI6GtSwEgf8MRiqkbHLWf-qvDm2vA56g/exec?fname={fullNum}&faname{fatherName}&mname={motherName}&age={age}&gender={gender}&nlty={nationality}&add={adress}&mail={email}&mob={mno}''')
+         st.balloons()
+         st.success("submitted sucessfully")
