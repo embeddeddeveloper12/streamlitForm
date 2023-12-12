@@ -18,6 +18,7 @@ if submit==True:
         if len(mail)>0 and mail.find("@")<0:
                 st.error("Enter a valid email")
     else:
-         req.get(f'''https://script.google.com/macros/sAKfycbw2BkmNPOkXFMNxb5EJ53ZGAdIx_2BV4Hh2PsHI6GtSwEgf8MRiqkbHLWf-qvDm2vA56g/exec?fname={fullNum}&faname{fatherName}&mname={motherName}&age={age}&gender={gender}&nlty={nationality}&add={adress}&mail={email}&mob={mno}''')
+         url="https://script.google.com/macros/s/AKfycbzsHJ5paT0EguvW4cYxpTtGGoY3MyO4qd7_7pzIfMbNHb6WjJLz9xzJNcABTWa97K6_YQ/exec?fname="+str(fullNum)+"&faname="+str(fatherName)+"&mname="+str(motherName)+"&age="+str(age)+"&gender="+str(gender)+"&nlty="+str(nationality)+"&add="+str(adress)+"&mail="+str(email)+"&mob="+str(mno)
+         req.get(url)
          st.balloons()
          st.success("submitted sucessfully")
